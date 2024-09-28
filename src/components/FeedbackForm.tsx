@@ -6,7 +6,7 @@ export default function FeedbackForm() {
 
   const charCount = MAX_CHARACTERS - text.length;
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newText = event.target.value;
     if (newText.length > MAX_CHARACTERS) {
       return;
