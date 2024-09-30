@@ -21,7 +21,7 @@ export default function FeedbackList() {
   return (
     <ol className="feedback-list">
       {feedbackItems.map((feedbackItem) => (
-        <FeedbackItem upvoteCount={5} />
+        <FeedbackItem feedbackItem={feedbackItem} />
       ))}
     </ol>
   );
