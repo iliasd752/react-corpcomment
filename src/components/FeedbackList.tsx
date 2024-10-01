@@ -12,14 +12,14 @@ export default function FeedbackList() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        setFeedbackItems(data.feedbacks);
       });
   }, []);
 
   return (
     <ol className="feedback-list">
       {feedbackItems.map((feedbackItem) => (
-        <FeedbackItem feedbackItem={feedbackItem} />
+        <FeedbackItem key={feedbackItem.id} feedbackItem={feedbackItem} />
       ))}
     </ol>
   );
