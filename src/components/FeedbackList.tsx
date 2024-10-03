@@ -12,16 +12,20 @@ export default function FeedbackList() {
     const fetchFeedbackItems = async () => {
       setIsLoading(true);
 
-      const response = await fetch(
-        "https://bytegrad.com/course-assets/projects/corpcomment/api/feedbacks"
-      );
-      if (!response.ok) {
-        throw new Error();
+      try {
+        const response = await fetch(
+          "https://bytegrad.com/course-assets/projects/corpcomment/api/feedbacks"
+        );
+        if (!response.ok) {
+          throw new Error();
+        }
+
+        const data = await response.json();
+        setFeedbackItems(data.feedbacks);
+      } catch (error) {
+        setErrorMessage("Something went wrong. Please try again later.");
       }
 
-      const data = await response.json();
-
-      setFeedbackItems(data.feedbacks);
       setIsLoading(false);
     };
 
