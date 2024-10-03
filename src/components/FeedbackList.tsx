@@ -10,6 +10,8 @@ export default function FeedbackList() {
 
   useEffect(() => {
     const fetchFeedbackItems = async () => {
+      setIsLoading(true);
+
       const response = await fetch(
         "https://bytegrad.com/course-assets/projects/corpcomment/api/feedbacks"
       );
@@ -18,7 +20,9 @@ export default function FeedbackList() {
       }
 
       const data = await response.json();
+
       setFeedbackItems(data.feedbacks);
+      setIsLoading(false);
     };
 
     fetchFeedbackItems();
