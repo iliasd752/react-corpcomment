@@ -13,6 +13,7 @@ export default function Container({
   feedbackItems,
   isLoading,
   errorMessage,
+  handleAddToList,
 }: ContainerProps) {
   return (
     <main className="container">
