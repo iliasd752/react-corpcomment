@@ -58,6 +58,7 @@ function App() {
         isLoading={isLoading}
         feedbackItems={feedbackItems}
         errorMessage={errorMessage}
+        handleAddToList={handleAddToList}
       />
 
       <HashtagList />
